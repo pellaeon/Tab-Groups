@@ -1182,7 +1182,7 @@ this.UI = {
 			dispatch(window, { type: "willshowtabview", cancelable: false });
 
 			// store tab strip smooth scroll value and disable it.
-			let tabStrip = gBrowser.tabContainer.mTabstrip;
+			let tabStrip = gBrowser.tabContainer.arrowScrollbox;
 			this._originalSmoothScroll = tabStrip.smoothScroll;
 			tabStrip.smoothScroll = false;
 
@@ -1285,7 +1285,7 @@ this.UI = {
 			gBrowser.selectedBrowser.focus();
 
 			gBrowser.updateTitlebar();
-			gBrowser.tabContainer.mTabstrip.smoothScroll = this._originalSmoothScroll;
+			gBrowser.tabContainer.arrowScrollbox.smoothScroll = this._originalSmoothScroll;
 
 			this._els.addSystemEventListener(gWindow.document, "keydown", gBrowser, false);
 		}
